@@ -1,0 +1,34 @@
+stages:
+  - build
+  - deploy
+
+image: node:14
+
+variables:
+  CI_PAGES_DOMAIN: "https://d3-portfolio-23-maninder-221-95f91d62163049b7e4a02b5c986e782810.gitlab.io"
+
+build:
+  stage: build
+  script:
+    - npm install
+    - CI=true npm run build
+    - rm -rf public
+    - mv dist public
+    - cp public/index.html public/404.html
+    - mv public ../public
+  only:
+    - Dev
+
+pages:
+  stage: deploy
+  script:
+    - echo "Deploying to GitLab Pages..."
+    - npm install
+    - npm run build
+    - rm -rf public
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  only:
+    - Dev

@@ -1,0 +1,44 @@
+{
+    "chartContainer": {
+      "width": 500,
+      "height": 400
+    },
+    "chartColor": {
+      "fill": "steelblue"
+    },
+    "tooltip": {
+      "fontSize": "14px",
+      "Color":"rgb(102, 102, 102)",
+      "tooltipContainer": {
+        "borderColor": "rgb(255, 255, 255)",  
+        "padding": "10px",
+        "boxShadow": "rgba(0, 0, 0, 0.2) 1px 2px 10px",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderWidth": "1px",
+        "borderRadius": "4px"
+    }
+    },
+    "axisLabels": {
+      "x": {
+        "view": true,
+        "text": "X Axis Label",
+        "fill": "#333",
+        "fontSize": "14px",
+        "tickLabelOrientation": "rotate(0)",
+        "textAnchor": "middle"
+      },
+      "y": {
+        "view": true,
+        "text": "Y Axis Label",
+        "fill": "#333",
+        "fontSize": "14px"
+      }
+    },
+    "chartTitle": {
+      "view": true,
+      "text": "Heat Map Chart Title",
+      "fill": "#333",
+      "fontSize": "16px"
+    }
+  }
+  

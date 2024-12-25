@@ -1,0 +1,253 @@
+{
+  "chartContainer": {
+    "displayNameHead": "Chart Container",
+    "width": {
+      "displayName": "Width",
+      "value": 600
+    },
+    "height": {
+      "displayName": "Height",
+      "value": 300
+    },
+    "backgroundImage": {
+      "displayName": "Background Image",
+      "value": ""
+    }
+  },
+  "chartColor": {
+    "displayNameHead": "Chart Color",
+    "backgroundColor": {
+      "displayName": "Background Color",
+      "value": "#fff"
+    }
+  },
+
+  "tooltip": {
+    "displayNameHead": "Tooltip",
+    "fontSize": {
+      "displayName": "Font Size",
+      "value": "14px"
+    },
+
+    "fontFamily": {
+      "displayName": "Font Family",
+      "value": "Arial"
+    },
+    "textColor": {
+      "displayName": "Text Color",
+      "value": "rgb(102, 102, 102)"
+    },
+    "padding": {
+      "displayName": "Padding",
+      "value": "10px"
+    },
+    "bgColor": {
+      "displayName": "Background Color",
+      "value": "#ffffff"
+    },
+    "borderColor": {
+      "displayName": "Border Color",
+      "value": "gray"
+    },
+    "boxshadow": {
+      "displayName": "Box Shadow",
+      "value": "2px 2px 5px #888888"
+    },
+    "borderRadius": {
+      "displayName": "Border Radius",
+      "value": "5px"
+    },
+    "borderWidth": {
+      "displayName": "Border Width",
+      "value": "1px"
+    },
+    "view": {
+      "displayName": "View",
+      "value": "true"
+    }
+  },
+
+  "xAxis": {
+    "displayNameHead": "X Axis",
+    "title": {
+      "displayNameSubHead": "X Axis Title",
+      "view": {
+        "displayName": "View",
+        "value": true
+      },
+      "value": {
+        "displayName": "Value",
+        "value": "X Axis Label"
+      },
+      "fontFamily": {
+        "displayName": "Font Family",
+        "value": "Arial"
+      },
+      "color": {
+        "displayName": "Color",
+        "value": "#333333"
+      },
+      "fontSize": {
+        "displayName": "Font Size",
+        "value": "16px"
+      },
+      "placement": {
+        "displayName": "Placement",
+        "value": "start"
+      }
+    },
+    "axisLine": {
+      "displayNameSubHead": "Axis Line",
+      "color": {
+        "displayName": "Color",
+        "value": "#333333"
+      }
+    },
+    "axisTick": {
+      "displayNameSubHead": "Axis Tick",
+      "color": {
+        "displayName": "Color",
+        "value": "#000000"
+      }
+    },
+    "tickLabel": {
+      "displayNameSubHead": "Tick Label",
+      "rotation": {
+        "displayName": "Rotation",
+        "value": 0
+      },
+      "fontFamily": {
+        "displayName": "Font Family",
+        "value": "Arial"
+      },
+      "color": {
+        "displayName": "Color",
+        "value": "#000000"
+      },
+      "fontSize": {
+        "displayName": "Font Size",
+        "value": "12px"
+      },
+      "textAnchor": {
+        "displayName": "Placement",
+        "value": "middle"
+      }
+    }
+  },
+  "yAxis": {
+    "displayNameHead": "Y Axis",
+    "title": {
+      "displayNameSubHead": "Y Axis Title",
+      "view": {
+        "displayName": "View",
+        "value": true
+      },
+      "value": {
+        "displayName": "Value",
+        "value": "Y Axis Label"
+      },
+      "fontFamily": {
+        "displayName": "Font Family",
+        "value": "Arial"
+      },
+      "color": {
+        "displayName": "Color",
+        "value": "#333333"
+      },
+      "fontSize": {
+        "displayName": "Font Size",
+        "value": "16px"
+      },
+      "textAnchor": {
+        "displayName": "Placement",
+        "value": "middle"
+      }
+    },
+    "axisLine": {
+      "displayNameSubHead": "Axis Line",
+      "color": {
+        "displayName": "Color",
+        "value": "#333333"
+      }
+    },
+    "axisTick": {
+      "displayNameSubHead": "Axis Tick",
+      "color": {
+        "displayName": "Color",
+        "value": "#000000"
+      }
+    },
+    "tickLabel": {
+      "displayNameSubHead": "Tick Label",
+      "fontFamily": {
+        "displayName": "Font Family",
+        "value": "Arial"
+      },
+      "color": {
+        "displayName": "Color",
+        "value": "#000000"
+      },
+      "fontSize": {
+        "displayName": "Font Size",
+        "value": "12px"
+      },
+      "view": {
+        "displayName": "View",
+        "value": "auto"
+      }
+    }
+  },
+  "chartTitle": {
+    "displayNameHead": "Multi Line Chart Title",
+    "view": {
+      "displayName": "View",
+      "value": true
+    },
+    "value": {
+      "displayName": "Value",
+      "value": "Multi Line Chart"
+    },
+    "fontFamily": {
+      "displayName": "Font Family",
+      "value": "Arial"
+    },
+    "color": {
+      "displayName": "Color",
+      "value": "#00000"
+    },
+    "fontSize": {
+      "displayName": "Font Size",
+      "value": "18px"
+    }
+  },
+  "gridLine": {
+    "displayNameHead": "Grid Line",
+    "view": {
+      "displayName": "View",
+      "value": true
+    },
+    "color": {
+      "displayName": "Color",
+      "value": "#c7d2da"
+    },
+    "opacity": {
+      "displayName": "Opacity",
+      "value": "0.7"
+    },
+    "legends": {
+      "displayNameHead": "Legends",
+      "textAnchor": {
+        "displayName": "TextAnchor",
+        "value": "start"
+      },
+      "fontSize": {
+        "displayName": "Font Size",
+        "value": "14px"
+      },
+      "fontFamily": {
+        "displayName": "Font Family",
+        "value": "Arial, sans-serif"
+      }
+    }
+  }
+}

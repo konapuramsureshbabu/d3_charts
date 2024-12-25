@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: 'Roboto Slab';
+    overflow-y: auto;
+    overscroll-behavior: 'contain';
+    scrollbar-width: thin;
+    scrollbar-color: #808080 ;
+  }
+
+
+  body::-webkit-scrollbar {
+    width: 5px;
+    cursor:"pointer";
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    width: 10px !important; 
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #808080;
+    border-radius: 5px;
+  }
+  
+  /* body::-webkit-scrollbar-track {
+    background-color: transparent;
+  } */
+  
+
