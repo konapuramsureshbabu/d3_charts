@@ -48,7 +48,7 @@ const FooterComponent = () => {
         </Grid>
         <br />
         <Grid textAlign="center">
-        <p className={classes.crearText}><span style={{color:"#012010"}}> Created by</span> Ahex Technologies</p>
+        <p className={classes.crearText}><span style={{color:"#012010"}}> Created by</span> Suresh Technologies</p>
         </Grid>
       </Grid>
     </>

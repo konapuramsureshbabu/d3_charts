@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { Grid, Menu, MenuItem, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import ChartDetailsLogo from "../assets/images/chartDetail-logo.png";
+import ChartDetailsLogo from "../assets/images/d3_png.png";
 import AvatarImage from "../assets/images/avatarImage.png";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import SourceDialog from "./SourceDialog";
@@ -96,10 +96,10 @@ const HeaderComponent: React.FC<HeaderComponentProps> = ({ sticky = true }) => {
   const location = useLocation();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null); // Initial state as null
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<HTMLElement | null>(null);
 
   const handleMobileMenuToggle = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMenuOpen(event.currentTarget);
+    setMobileMenuOpen(event.currentTarget as HTMLElement); // Explicitly cast to HTMLElement
   };
 
   const handleMobileMenuClose = () => {

@@ -164,7 +164,7 @@ const HomePage = () => {
           </Grid>
           <Grid item mr={{ xs: 0.5, md: 10 }}>
             <span className={classes.createdText}>
-              <span style={{ color: "#012010" }}> Created by</span> Ahex
+              <span style={{ color: "#012010" }}> Created by</span> Suresh
               Technologies
             </span>
           </Grid>

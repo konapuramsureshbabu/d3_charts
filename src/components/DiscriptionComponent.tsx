@@ -36,15 +36,15 @@ const DescriptionComponent: React.FC = () => {
           mb={2}
           color="#888888"
         >
-          AHEX Tech. | d3.js
+           d3.js
         </Typography>
         <p className={classes.pColor}>
-          AHEX Tech leverages the power of D3.js in its projects to create
+          Suresh Tech leverages the power of D3.js in its projects to create
           dynamic and interactive data visualizations. Through the seamless
-          integration of D3.js, AHEX Tech ensures that data comes to life,
+          integration of D3.js, Suresh Tech ensures that data comes to life,
           offering a compelling visual narrative to users. This implementation
           enhances the user experience by presenting complex information in an
-          intuitive and engaging manner, making AHEX Tech's projects both
+          intuitive and engaging manner, making Suresh Tech's projects both
           informative and visually impactful.
         </p>
       </Grid>
