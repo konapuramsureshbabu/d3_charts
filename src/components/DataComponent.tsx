@@ -3,9 +3,7 @@
 import {
   Box,
   Chip,
-  FormControl,
   Grid,
-  InputLabel,
   MenuItem,
   Select,
   SelectChangeEvent,
