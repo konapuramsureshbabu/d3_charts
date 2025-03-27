@@ -2,47 +2,61 @@ name: React Build & Deploy
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-env:
-  CI: true
+    branches: [main]
 
 jobs:
-  build-and-deploy:
-    name: Build and Deploy
+  build:
     runs-on: ubuntu-latest
-    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install --force
+          
+      - name: Build project
+        run: npm run build
+        
+      - name: Verify build output
+        run: |
+          ls -la build/
+          if [ ! -f "build/index.html" ]; then
+            echo "Error: index.html not found in build directory"
+            exit 1
+          fi
+          
+      - name: Upload build files
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifact
+          path: build/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       pages: write
       id-token: write
-    
+      
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: 'npm'
+      - name: Download build files
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact
+          path: build/
+          
+      - name: Verify downloaded files
+        run: ls -la build/
         
-    - name: Install dependencies
-      run: npm install --force
-      
-    - name: Build project
-      run: npm run build
-      
-    - name: Upload build artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: production-build
-        path: build/
-      
-    - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v3.9.3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          force_orphan: true
