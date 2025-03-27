@@ -2,6 +2,7 @@
   "name": "d3",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://konapuramsureshbabu.github.io/d3_charts/",
   "type": "module",
   "scripts": {
     "start": "vite build && vite preview --host 0.0.0.0 --port 5173",
