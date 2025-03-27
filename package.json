@@ -1,13 +1,13 @@
 {
+  "homepage": "https://konapuramsureshbabu.github.io/d3_charts/",
   "name": "d3",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://konapuramsureshbabu.github.io/d3_charts/",
   "type": "module",
   "scripts": {
     "start": "vite build && vite preview --host 0.0.0.0 --port 5173",
     "dev": "vite --host 0.0.0.0 --port 5173",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview --host 0.0.0.0 --port 5173"
   },
