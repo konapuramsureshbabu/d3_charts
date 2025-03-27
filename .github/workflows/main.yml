@@ -1,12 +1,17 @@
-name: React Vite Build & Deploy
+name: Deploy Vite React App
 
 on:
   push:
     branches: [main]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    
     steps:
       - uses: actions/checkout@v4
       
@@ -19,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: npm install --force
           
-      - name: Build project
+      - name: Build app
         run: |
           npm run build
           echo "Build output:"
@@ -28,35 +33,15 @@ jobs:
       - name: Verify build output
         run: |
           if [ ! -f "dist/index.html" ]; then
-            echo "❌ Error: index.html not found in dist directory"
-            ls -la dist/
+            echo "❌ Error: index.html missing in dist!"
+            ls -la
             exit 1
           fi
           
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: vite-build
-          path: dist/
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
-      
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: vite-build
-          path: dist/
+          path: 'dist'
           
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3.9.3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true
+      - name: Deploy
+        uses: actions/deploy-pages@v2
