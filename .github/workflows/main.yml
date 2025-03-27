@@ -1,4 +1,4 @@
-name: React Build & Deploy
+name: React Vite Build & Deploy
 
 on:
   push:
@@ -20,21 +20,24 @@ jobs:
         run: npm install --force
           
       - name: Build project
-        run: npm run build
-        
+        run: |
+          npm run build
+          echo "Build output:"
+          ls -la dist/
+          
       - name: Verify build output
         run: |
-          ls -la build/
-          if [ ! -f "build/index.html" ]; then
-            echo "Error: index.html not found in build directory"
+          if [ ! -f "dist/index.html" ]; then
+            echo "❌ Error: index.html not found in dist directory"
+            ls -la dist/
             exit 1
           fi
           
-      - name: Upload build files
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifact
-          path: build/
+          name: vite-build
+          path: dist/
 
   deploy:
     needs: build
@@ -45,18 +48,15 @@ jobs:
       id-token: write
       
     steps:
-      - name: Download build files
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: build-artifact
-          path: build/
+          name: vite-build
+          path: dist/
           
-      - name: Verify downloaded files
-        run: ls -la build/
-        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./dist
           force_orphan: true
