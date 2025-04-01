@@ -1,51 +1,89 @@
-name: Deploy Vite React App
+name: Deploy Vite App to GitHub Pages
+
+
+
 
 on:
-  push:
-    branches: [main]
 
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
+  push:
+
+    branches:
+
+      - main  # Change to "master" if your branch is named "master"
+
+
+
+
+permissions:
+
+  contents: write
+
+
+
 
 jobs:
+
   deploy:
+
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
-    
+
+
+
+
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node
+
+      - name: Checkout Repository
+
+        uses: actions/checkout@v4
+
+
+
+
+      - name: Setup Node.js
+
         uses: actions/setup-node@v4
+
         with:
-          node-version: 20
+
+          node-version: '20'
+
           cache: 'npm'
-          
-      - name: Install dependencies
-        run: npm install --force
-          
-      - name: Build app
+
+
+
+
+      - name: Install Dependencies
+
+        run: npm install
+
+
+
+
+      - name: Build Vite App
+
+        run: npm run build  # This will generate the "dist/" directory
+
+
+
+
+      - name: Debug Build Directory
+
         run: |
-          npm run build
-          echo "Build output:"
-          ls -la dist/
-          
-      - name: Verify build output
-        run: |
-          if [ ! -f "dist/index.html" ]; then
-            echo "❌ Error: index.html missing in dist!"
-            ls -la
-            exit 1
-          fi
-          
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: 'dist'
-          
+
+          echo "Checking directory structure..."
+
+          ls -la
+
+          ls -la dist || echo "⚠️ Dist directory does not exist!"
+
+
+
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+
+        uses: JamesIves/github-pages-deploy-action@v4
+
+        with:
+
+          branch: gh-pages
+
+          folder: dist  # Make sure "dist/" is used instead of "build/"
